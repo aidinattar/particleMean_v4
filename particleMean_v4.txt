@@ -19,8 +19,6 @@ Take following files from example "braggMean_v4":
 - EventDump.h .
 All these files can be used with no modification
 
-(Read e Dump puoi prenderli da bragg e modificare)
-
 ***
 Create the following files copying the corresponding ones from
 "braggMean_v4" and changing the "readFile" and "process" functions,

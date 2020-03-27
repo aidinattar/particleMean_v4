@@ -1,0 +1,75 @@
+
+---- Modificare Mean_v3 e usare le interfacce per event read e process ----
+
+Sostituire le funzioni globali "read" e "dump" per usare classi con
+interfacce astratte, come descritto come segue.
+L'esecuzione del comando dovrebbe essere
+
+execName input fileName
+or
+execName sim numberOfEvents [seedNumber]
+
+***
+Prendere i seguenti file dall'esempio "braggMean_v4":
+- AnalysisSteering.h ,
+- AnalysisSteering.cc ,
+- EventSource.h ,
+- EventSource.cc ,
+- EventReadFromFile.h ,
+- EventDump.h .
+Tutti questi file possono essere usati senza modifiche
+
+***
+Creare i file seguenti copiando i corrispondenti da
+"braggMean_v4" e cambiando le funzioni "readFile" e "process",
+rispettivamente:
+- EventReadFromFile.cc ,
+- EventDump.cc .
+In EventReadFromFile.cc includere nella funzione "readFile" il codice che
+era precedentemente nella funzione "read",
+In EventDump.cc includere nella funzione "process" il codice 
+precedentemente nella funzione "dump".
+
+***
+Creare una classe "ParticleMass", ereditando da "AnalysisSteering" e
+contentente un STL array di puntatori a oggetti "MassMean"; usare come
+esempio la classe "ElementReco" in "braggMean_v4".
+Includere tra i membri privati un "std::vector pList" di puntatori
+a oggetti MassMean (al posto del "bCurve" vector in "ElementReco").
+Implementare le funzioni:
+- "beginJob" per creare e immagazzinare i pointer a 2 oggetti "MassMean"
+  per due modi di decadimento, usando gli stessi range di massa come le 
+  precedenti verioni (nello stesso modo come i pointer a "BraggMean" sono 
+  immagazzinati in "bCurve"),
+- in "endJob" fare un loop sugli oggetti "MassMean" e per ognuno calcolare
+  media e rms delle masse e stampare il risultato (nello stesso modo con cui
+  viene fatto nel loop sugli oggetti "BraggMean" per calcolare e stampare
+  i risultati),
+- in "process" fare un loop sugli oggetti "MassMean" e per ognuno chiamare
+  la funzione "add" (nello stesso modo con cui viene aggiunto ogni evento
+  a tutti gli oggetti "BraggMean").
+
+***
+Modificare la fuzione "main" per usare le classi modificate usando il file
+"main.cc" dall'esempio "braggMean_v4" come referenza (cambiare gli 
+analizzatori: "ParticleMass" al posto di "ElementReco").
+Per simulare gli eventi usare la classe "EventSim".
+
+********* lista finale di funzioni *********
+
+main                   modify braggMean_v4
+mass                   copy   Mean_v3
+
+********* lista finale di classi   *********
+
+                       .h                            .cc
+Event                  copy   Mean_v3                copy   Mean_v3
+EventReadFromFile      copy   braggMean_v4           to do
+EventSim               done                          done
+AnalysisSteering       copy   braggMean_v4           copy   braggMean_v4
+EventSource            copy   braggMean_v4           copy   braggMean_v4
+MassMean               copy   Mean_v3                copy   Mean_v3
+ParticleMass           to do                         to do
+EventDump              copy   braggMean_v4           to do
+Constants              copy   Mean_v3                copy   Mean_v3
+Utilities              copy   Mean_v3                copy   Mean_v3
