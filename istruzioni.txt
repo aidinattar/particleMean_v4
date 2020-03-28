@@ -42,9 +42,9 @@ Implementare le funzioni:
   precedenti verioni (nello stesso modo come i pointer a "BraggMean" sono 
   immagazzinati in "bCurve"),
 - in "endJob" fare un loop sugli oggetti "MassMean" e per ognuno calcolare
-  media e rms delle masse e stampare il risultato (nello stesso modo con cui
-  viene fatto nel loop sugli oggetti "BraggMean" per calcolare e stampare
-  i risultati),
+  media e rms delle masse e stampare il risultato (nello stesso modo con 
+  cui viene fatto nel loop sugli oggetti "BraggMean" per calcolare e 
+  stampare i risultati),
 - in "process" fare un loop sugli oggetti "MassMean" e per ognuno chiamare
   la funzione "add" (nello stesso modo con cui viene aggiunto ogni evento
   a tutti gli oggetti "BraggMean").
@@ -55,7 +55,7 @@ Modificare la fuzione "main" per usare le classi modificate usando il file
 analizzatori: "ParticleMass" al posto di "ElementReco").
 Per simulare gli eventi usare la classe "EventSim".
 
-********* lista finale di funzioni *********
+********* lista finale di funzElementRecoioni *********
 
 main                   modify braggMean_v4
 mass                   copy   Mean_v3

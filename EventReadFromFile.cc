@@ -36,9 +36,9 @@ const Event* EventReadFromFile::readFile() {
     float Px, Py, Pz;
 
     // try to read input file
-    if( file >> i ){
+    if( *file >> i ){
 
-        file      >>  x >>  y >>  z;
+        *file      >>  x >>  y >>  z;
         ev = new Event( i,
                         x, y, z );// on success create new event
 
@@ -47,11 +47,11 @@ const Event* EventReadFromFile::readFile() {
 
     // read and store number of points
     int n;
-    file >> n;
+    *file >> n;
 
     for( i = 0; i < n; ++i ){
 
-        file >> q 
+        *file >> q 
              >> Px >> Py >> Pz;
 
         ev->add( Px, Py, Pz, q );
