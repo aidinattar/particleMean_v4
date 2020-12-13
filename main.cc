@@ -55,8 +55,7 @@ int main( int argc, char* argv[] ) {
   int i;
 
   // initialize all analyzers
-  for ( i = 0; i < l; ++ i ) 
-    aList[ i ]->beginJob();
+  for ( i = 0; i < l; ++ i ) aList[ i ]->beginJob();
 
   // loop over events
   const Event* ev;

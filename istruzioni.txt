@@ -73,3 +73,10 @@ ParticleMass           to do                         to do
 EventDump              copy   braggMean_v4           to do
 Constants              copy   Mean_v3                copy   Mean_v3
 Utilities              copy   Mean_v3                copy   Mean_v3
+
+
+
+EventReadFromFile è classe derivata di EventSource, quindi il distruttore
+è virtual. Stessa cosa vale per EventSim.
+
+EventDump è derivata da AnalysisSteering. Cosi come ParticleMass

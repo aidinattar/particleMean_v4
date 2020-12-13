@@ -40,8 +40,7 @@ const Event* EventReadFromFile::readFile() {
 
         *file      >>  x >>  y >>  z;
         ev = new Event( i,
-                        x, y, z );// on success create new event
-
+                        x, y, z ); // on success create new event
     }
     else return 0; // on failure return null pointer
 
